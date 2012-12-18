@@ -98,7 +98,7 @@
 				</ul>
 			</section>
 		<?php } } ?>
-		<section>
+			<section>
 				<h2>No More Posts</h2>
 				<p style="margin-top:5%;float:left;">Thanks for taking the time to look at some of my work, would you like to read some <a href="<?php get_site_url(); ?>/#/2">More Info About Me</a>?  You can also <a href="<?php get_site_url(); ?>/#/3">Get In Touch</a> with me on this site.</p>
 			</section>	

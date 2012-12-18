@@ -7,7 +7,7 @@
 	<!-- Any section element inside of this container is displayed as a slide -->
 	<div class="slides">
 		<section>
-			<section id="home" class="info" data-state="somestate">
+			<section id="home" class="info" data-state="welcome">
 				<!--<img src="<?php echo get_stylesheet_directory_uri();?>/images/trans-logo.png" />-->
 				<h2>Welcome</h2>
 				<a href="#/0/1" class="big-arrow down"></a>
@@ -23,7 +23,7 @@
 					</ul>
 				</div>
 			</section>
-			<section id="navigation" class="info" data-state="somestate">
+			<section id="navigation" class="info" data-state="navigation">
 				<!--<img src="<?php echo get_stylesheet_directory_uri();?>/images/trans-logo.png" />-->
 				<h2>Navigation</h2>
 				<a href="#/1" class="big-arrow right"></a>
@@ -40,7 +40,7 @@
 
 		</section>
 		
-		<section id="work" data-state="somestate" name="work">
+		<section id="work" data-state="portfolio" name="work">
 			<section>
 				<h2>My Work</h2>
 				<a href="#/1/1" class="big-arrow down"></a>
@@ -148,7 +148,7 @@
 			</section>
 		</section>
 
-		<section id="about" class="info" data-state="somestate">
+		<section id="about" class="info" data-state="about-me">
 			<h2>About Me</h2>
 			<a href="#/3" class="big-arrow right"></a>
 			<div class="box">
@@ -166,7 +166,7 @@
 			</div>
 		</section>
 
-		<section id="contact" class="info" data-state="somestate">
+		<section id="contact" class="info" data-state="contact-page">
 			<h2>Contact Me</h2>
 			<a href="#/2" class="big-arrow left"></a>
 			<div class="contact-content">

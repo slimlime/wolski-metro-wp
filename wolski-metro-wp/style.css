@@ -1,10 +1,10 @@
 /*
-Theme Name: Sam Wolski's Metro WP theme
+Theme Name: Wolski's Metro WP theme
 Theme URI: http://www.samwolski.com
-Description: A simple WordPress theme based on the Skeleton RWD framework
+Description: A metro UI style theme based on the Reveal.js presentation framework and the Skeleton RWD wordpress theme.
 Version: 1.6
-Author: Simple Themes
-Author URI: http://www.simplethemes.com
+Author: Sam Wolski
+Author URI: http://www.samwolski.com
 Template: skeleton
 License: GPL
 License URI: http://www.opensource.org/licenses/gpl-license.php
@@ -1893,6 +1893,12 @@ body {
   color:#bbb;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
+}
+body.tag.archive {
+  background-image:url(images/bg3.jpg);
+}
+body.category.archive {
+  background-image:url(images/bg2.jpg);
 }
 p {
   font-family: 'Source Sans Pro', sans-serif;
