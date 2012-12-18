@@ -153,7 +153,7 @@
 			<a href="#/3" class="big-arrow right"></a>
 			<div class="box">
 				<p>
-					I specialise in creating the finer points of user exerperience, making big data <strong>accessible</strong> and using it to tell <strong>meaniful stories</strong> that can be used in <strong>real-world</strong> applications. I'm also an avid supporter of <strong>open source movements</strong> (<a href="" target="_blank" title="Source Files">source files for this theme are available on github</a>).
+					I specialise in creating the finer points of user exerperience, making big data <strong>accessible</strong> and using it to tell <strong>meaniful stories</strong> that can be used in <strong>real-world</strong> applications. I'm also an avid supporter of <strong>open source movements</strong> (<a href="https://github.com/wolskis/wolski-metro-wp" target="_blank" title="Source Files">source files for this theme are available on github</a>).
 				</p>
 				<p>
 					 Currently I work for a <a href="http://eresearch.griffith.edu.au/" title="eResearch Services, Griffith University" target="_blank">university-based development unit</a> that deals with the discovery and delivery of data produced by Australian research projects.</p>
