@@ -2445,7 +2445,44 @@ form#contactform button:focus, form#contactform button:hover {
 #successfulsend ul.box-links li {
 	width:42.5%;
 }
-
+#voice-command-info {
+	position:absolute;
+	background-color:#2ecc71;
+	color:#fff;
+	padding:1.1em 1.1em 1.3em 1.1em;
+	box-shadow: 0px 0px 5px rgba(0,0,0,.1);
+	z-index: 10000;
+}
+#voice-command-info strong, #voice-command-info p{
+	color:#FFF;
+	text-shadow:none;
+	margin:0;
+	font-size: 1.1em;
+	line-height: 1.1em;
+}
+#voice-command-info p {
+	display: inline-block;
+	width: 95%;
+}
+#voice-command-info a.close {
+	float: right;
+	z-index: 10000;
+	font-weight: bold;
+	color: #089a46;
+	text-shadow: 0px 1px 0px rgba(255,255,255,.35);
+	padding: .5em .2em 0 .5em;
+}
+#voice-command-info a.close:hover {
+	color: #04672e;
+}
+#post_box span.loading {
+	display: block;
+	position: absolute;
+	top: 40%;
+	font-size: 1.5em;
+	text-align: center;
+	width: 100%;
+}
 @media only screen and (max-width: 1100px) {
 	form#contactform {
 		max-width:350px;
@@ -2484,6 +2521,9 @@ form#contactform button:focus, form#contactform button:hover {
 }
 
 @media only screen and (max-width: 767px) {
+	body {
+		font-size:14px;
+	}
 	.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
 		text-shadow:0px 1px 0px rgba(0,0,0,.3);
 	} 

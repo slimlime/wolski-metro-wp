@@ -16,6 +16,10 @@ $(window).mousewheel(getSlidePosition);
 
 
 	$(document).ready(function() {
+		console.log(localStorage.getItem('hide-voice-alert'));
+		if(! localStorage.getItem('hide-voice-alert')) {
+			$('#voice-command-info').slideDown();
+		}
 	
 		//display post data on hover
 		  $('section.post-item').each(function(){
@@ -84,10 +88,15 @@ $(window).mousewheel(getSlidePosition);
 			$.ajaxSetup({cache:false});
 			$("a.post-link").click(function(){
 				var post_id = $(this).attr("rel")
-				
-				$("#post_box").html("loading...");
-				$("#post_box").load("http://localhost/samwolski.com/ajax-post/",{id:post_id}, function(){
-					$("#post_box").fadeIn(500);
+
+				$("#post_box .inner").html('').hide();
+				$("#post_box span.loading").show();
+
+				$("#post_box").fadeIn(500);
+				$("#post_box .inner").load("http://www.samwolski.com/ajax-post/",{id:post_id}, function(){
+					$("#post_box span.loading").fadeOut(300, function(){
+						$("#post_box .inner").fadeIn(500);
+					});
 					
 				});
 				
@@ -139,6 +148,11 @@ $(window).mousewheel(getSlidePosition);
 			    });
 			    return false; 	
 			}
+		});
+
+		$('#voice-command-info .close').click(function(){
+			localStorage.setItem('hide-voice-alert', true);
+			$('#voice-command-info').slideUp();
 		});
 
 	});

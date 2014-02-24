@@ -129,8 +129,88 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
 <![endif]-->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/0.2.0/annyang.min.js"></script>
+  <script>
+  if (annyang) {
+    // Let's define our first command. First the text we expect, and then the function it should call
+    var commands = {
+      'Home': function() {
+        console.log('Voice Command: home');
+        Reveal.slide( 0, 0 );
+      },
+      'Work': function() {
+        console.log('Voice Command: work');
+        Reveal.slide( 1, 0 );
+      },
+      'Navigation': function() {
+        console.log('Voice Command: navigation');
+        Reveal.slide( 0, 1 );
+      },
+      'About': function() {
+        console.log('Voice Command: about');
+        Reveal.slide( 2, 0 );
+      },
+      'Contact': function() {
+        console.log('Voice Command: contact');
+        Reveal.slide( 3, 0 );
+      },
+      'Zoom': function(){
+        console.log('Voice Command: zoom');
+        Reveal.toggleOverview();
+      },
+      'Left': function(){
+        console.log('Voice Command: left');
+        Reveal.left();
+      },
+      'Right': function(){
+        console.log('Voice Command: right');
+        Reveal.right();
+      },
+      'Up': function(){
+        console.log('Voice Command: up');
+        Reveal.up();
+      },
+      'Down': function(){
+        console.log('Voice Command: down');
+        Reveal.down();
+      }
+    };
+
+    var started = 0;
+    var startCallback = function(e){
+      started = 1;
+    }
+    annyang.addCallback('start', startCallback);
+    // Initialize annyang with our commands
+    annyang.init(commands);
+  }
+  $(document).keydown(function(e){
+    if (e.keyCode == 86){
+      if (started != 1){
+        // Start listening. You can call this here, or attach this call to an event, button, etc.
+        annyang.start();
+      } else {
+        annyang.abort();
+      }
+    }
+  });
+  /*$(document).keyup(function(e){
+    if (e.keyCode == 17){
+      annyang.abort();
+    }
+  });*/
+
+    
+
+  </script>
 </head>
 <body <?php body_class(); ?>>
+  <div id="voice-command-info" style="display:none;">
+    <a href="javascript:void(0)" class="close" >x</a>
+    <p><strong>This site now has voice commands!</strong>  Press '<em>v</em>' once to enable speech recognition. Try out: <em>Zoom</em>, <em>Down</em>, <em>Up</em>, <em>Left</em>, <em>Right</em>, <em>Navigation</em>, <em>Home</em>, <em>Work</em>, <em>About</em> and <em>Contact</em>. Press '<em>v</em>' again to turn off voice commands.</p>
+    
+  </div>
 	<!--<div id="wrap" class="container">
 	<div class="resize"></div>-->
 	<?php

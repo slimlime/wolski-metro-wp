@@ -219,6 +219,7 @@ function skeleton_setup() {
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 300, 205, true );
 
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );

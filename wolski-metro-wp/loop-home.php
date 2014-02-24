@@ -1,5 +1,5 @@
 <?php ?>
-<div id="post_box"></div>
+<div id="post_box"><span class="loading">Loading, please wait ...</span><div class="inner"></div></div>
 <div class="reveal">
 	<!-- Used to fade in a background when a specific slide state is reached -->
 	<div class="state-background"></div>
@@ -111,16 +111,50 @@
 			</section>
 			<section>
 				<h2>&nbsp;</h2>
-				<a href="#/2" class="big-arrow right"></a>
+				<a href="#/1/2" class="big-arrow down"></a>
 				<ul class="grid">
 
-					<?php query_posts('posts_per_page=4&offset=16'); ?>
+					<?php query_posts('posts_per_page=8&offset=16'); ?>
 
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 					<li class="wrap four columns">
 						<a href="<?php the_permalink(); ?>" rel="<?php the_ID(); ?>" class="post-link" title="<?php the_title(); ?>">
 						<?php the_post_thumbnail(); ?>
+							<div class="post-content">
+								<h2 class="entry-title">
+									<?php
+										$thetitle = $post->post_title; /* or you can use get_the_title() */
+										$getlength = strlen($thetitle);
+										$thelength = 30;
+										echo substr($thetitle, 0, $thelength);
+										if ($getlength > $thelength) echo "...";
+									?>
+								</h2>
+								<footer class="entry-meta">
+									<span class="postdate"><?php echo get_the_date(); ?></span>
+									
+								</footer><!-- .entry-meta -->
+							</div>
+						</a>
+					</li><!-- #post-<?php the_ID(); ?> .four.columns -->
+					<?php endwhile; else: ?>
+						<p>Sorry, no posts matched your criteria.</p>
+					<?php endif; ?>
+				</ul>
+			</section>
+			<section>
+				<h2>&nbsp;</h2>
+				<a href="#/3" class="big-arrow right"></a>
+				<ul class="grid">
+
+					<?php query_posts('posts_per_page=4&offset=24'); ?>
+
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+					<li class="wrap four columns">
+						<a href="<?php the_permalink(); ?>" rel="<?php the_ID(); ?>" class="post-link" title="<?php the_title(); ?>">
+						<?php the_post_thumbnail('thumbnail'); ?>
 							<div class="post-content">
 								<h2 class="entry-title">
 									<?php
